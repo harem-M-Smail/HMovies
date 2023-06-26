@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { useEffect, useState } from "react";
 import { BsFillStarFill } from "react-icons/bs";
 import { Link, NavLink, useNavigate } from "react-router-dom";

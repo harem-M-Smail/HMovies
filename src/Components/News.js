@@ -1,3 +1,4 @@
+/* eslint-disable */
 const News=({news})=>{
     console.log(news.data.newsStories)
     return(

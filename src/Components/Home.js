@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { useLoaderData } from "react-router-dom"
 import Catagory from "./Catagory"
 import About from "./About"

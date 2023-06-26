@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { Link, useLoaderData } from "react-router-dom";
 import About from "./About";
 

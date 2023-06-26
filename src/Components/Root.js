@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { Outlet } from "react-router"
 import Navbar from "./Navbar"
 import { useEffect, useState } from "react"
