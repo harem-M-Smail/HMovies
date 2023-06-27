@@ -92,7 +92,7 @@ const EachMovie = () => {
       </div>
       {details.production_companies.length !== 0 && (
         <div className="production-companies-container">
-          <h2 className="recomends-title">Production Companies</h2>
+          <h1>Production Companies</h1>
           <div className="production-companies">
             {details.production_companies.map(
               (company) =>
@@ -109,26 +109,25 @@ const EachMovie = () => {
         </div>
       )}
       {recomendations.results.length !== 0 && (
-        <div className="pc" style={{ width: "100%", backgroundColor:"black" }}>
-          <h1 className="recomends-title">Recomends</h1>
-          <div className="catagory">
-            {recomendations.results.slice(0, 6).map((movie) => (
+        <div className="recomends-container">
+          <h1 >Recomends</h1>
+          <div className="recomend-movies-scroll-container">
+            {recomendations.results.map((movie) => (
+              
               <Link
-                className="each-catagory-movie"
-                style={{
-                  backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.poster_path})`,
-                }}
-                to={"/title/" + movie.id}
-                key={movie.id}
-              ></Link>
+              to={"/title/" + movie.id}
+              key={movie.id}
+            >
+              <img className="each-catagory-movie" src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt="movie_image"/>
+            </Link>
             ))}
           </div>
         </div>
       )}
       { reviews.length!==0 &&
-                  <div className="pc" style={{ width: "100%", backgroundColor:"black" }}>
-                  <h1 className="recomends-title">Reviews</h1>
                   <div className="reviews-container">
+                  <h1>Reviews</h1>
+                  <div className="reviews-scroll-container">
                   {reviews.map((review) => (
                     <div className="each-review" key={review.id}>
                       <div className="each-review-header">
@@ -144,9 +143,6 @@ const EachMovie = () => {
                 </div>
                   </div>
       }
-
-      
-
       <About />
     </div>
   );

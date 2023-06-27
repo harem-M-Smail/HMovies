@@ -5,13 +5,14 @@ import NotFound from './Components/NotFound';
 import Home, { homeLoader } from './Components/Home';
 import EachMovie, { eachMovieLoader } from './Components/EachMovie';
 import ViewMore, { viewMoreLoader } from './Components/ViewMore';
+import ErrorElement from './Components/ErrorElement';
 
 function App() {
   
   const router=createBrowserRouter(
     createRoutesFromElements(
       <>
-      <Route path="/" element={<Root/>} loader={rootLoader}>
+      <Route path="/" element={<Root/>} loader={rootLoader} errorElement={<ErrorElement/>}>
         <Route index element={<Home/>} loader={homeLoader}/>
         <Route path="title/:id" element={<EachMovie/>} loader={eachMovieLoader} />
         <Route path="title/viewMore/:genre/:page" element={<ViewMore />} loader={viewMoreLoader}/>

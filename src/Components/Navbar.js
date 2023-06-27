@@ -56,6 +56,7 @@ const Navbar = ({genres}) => {
     setFound([])
     setQuery("")
   };
+  console.log("found length",found.length)
   const filteredFound=found.filter(movie=>movie.poster_path) 
   return (
     <div className="navbar">
@@ -72,14 +73,17 @@ const Navbar = ({genres}) => {
         type="text"
         placeholder="Search"
         value={query}
-        onChange={(e) => setQuery(e.target.value)}
+        onChange={(e) => {
+          setQuery(e.target.value)
+          console.log("onchange handled")
+        }}
       />
         <div className="found-movies-container">
-          {found.length !== 0 && (
+          {found.length !== 0 && query.length !== 0 && (
             <>
             {filteredFound.map((movie) => (
               <div className="each-found-movie" key={movie.id} onClick={() => chooseMovie(movie)}>
-                <img width={"35px"} src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}/>
+                <img width={"50px"} src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}/>
                 <div className="each-found-movie-content">
                 <h4>{movie.title}</h4>
                 <BsFillStarFill style={{fontSize:"11px",marginRight:"2px"}}/>

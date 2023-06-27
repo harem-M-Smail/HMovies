@@ -11,11 +11,11 @@ const Catagory=({title,data})=>{
         <div className="catagory">
           {movies.results.slice(0,12).map((movie) => (
             <Link
-              className="each-catagory-movie"
-              style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.poster_path})` }}
               to={"/title/" + movie.id}
               key={movie.id}
-            ></Link>
+            >
+              <img className="each-catagory-movie" src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt="movie_image"/>
+            </Link>
           ))}
         </div>
         {/* <Link className="view-more-link" to={`title/viewMore/next`}>View More</Link> */}
