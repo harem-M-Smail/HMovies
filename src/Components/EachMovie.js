@@ -5,7 +5,7 @@ import About from "./About";
 const EachMovie = () => {
   const { details, video, recomendations, review, creadits } =
     useLoaderData();
-  console.log("watch providers", creadits);
+  console.log("details", details);
   // ,whatchProviders,review,creadits
   // geners
   const geners = [];
@@ -33,7 +33,12 @@ const EachMovie = () => {
     trailer = video.results.slice(0, 1);
   }
   const reviews=review.results
-
+  let productionCompaniesLogo=false
+  details.production_companies.map(pCompany=>{
+    if(pCompany.logo_path ){
+      productionCompaniesLogo=true
+    }
+  })
   return (
     <div className="each-movie">
       <div className="each-movie-header-container">
@@ -90,7 +95,7 @@ const EachMovie = () => {
           controls
         />
       </div>
-      {details.production_companies.length !== 0 && (
+      {productionCompaniesLogo && (
         <div className="production-companies-container">
           <h1>Production Companies</h1>
           <div className="production-companies">

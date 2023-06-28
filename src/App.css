@@ -82,9 +82,11 @@ body{
   padding: 8px 16px;
   border: 2px solid transparent;
   box-shadow:1px 1px rgb(173, 173, 173);
-  background: #ffffff;
+  background: #ECF2FF;
 }
-
+::placeholder{
+  font-size: large;
+}
 .nav-links{
   color: white;
   text-decoration: none;
@@ -308,6 +310,7 @@ body{
 .each-movie-title{
   font-size: 50px;
   color: white;
+  line-height: 50px;
 }
 .each-movie-pilot{
   padding:20px 0px 20px 0px ;
@@ -367,25 +370,14 @@ body{
 .recomend-movies{
   padding: 10px;
 }
-.recomend-movies-scroll-container{
+.recomend-movies-scroll-container,.reviews-scroll-container{
   display: flex;
   overflow-x: scroll;
   gap: 30px;
   color: white;
-}
-.reviews-scroll-container{
-  color: white;
-  display: flex;
   padding: 20px;
-  gap: 30px;
-  overflow-x: scroll;
-  
+
 }
-/* @media(min-width:500px){
-  .reviews-container{
-    display: flex;
-  }
-} */
 .each-review-header{
   display: flex;
   gap: 12px;
@@ -398,10 +390,14 @@ body{
   width: 300px;
   height: 330px;
   padding: 8px;
+  line-height: 26px;
   background-color: #001C30;
   overflow-y: scroll;
   border-radius: 8px;
   color: #DAFFFB;
+  font-size: 20px;
+  overflow-wrap: break-word;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 .each-review h3{
   display: inline-block;
@@ -412,6 +408,7 @@ body{
   background-size: cover;
   border-radius: 50px;
   background-color: white;
+  color: white;
 }
 /* About */
 .about{
