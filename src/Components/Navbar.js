@@ -56,7 +56,6 @@ const Navbar = ({genres}) => {
     setFound([])
     setQuery("")
   };
-  console.log("found length",found.length)
   const filteredFound=found.filter(movie=>movie.poster_path) 
   return (
     <div className="navbar">
@@ -75,7 +74,6 @@ const Navbar = ({genres}) => {
         value={query}
         onChange={(e) => {
           setQuery(e.target.value)
-          console.log("onchange handled")
         }}
       />
         <div className="found-movies-container">

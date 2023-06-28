@@ -2,9 +2,6 @@ import { Link } from "react-router-dom"
 
 const Catagory=({title,data})=>{
     const movies = data
-    console.log(data)
-    // const next= data.next.slice(8).replace("limit=12","limit=24")
-    // console.log(next)
     return (
       <div className="pc">
         <h1 className="catagory-title">{title}</h1>

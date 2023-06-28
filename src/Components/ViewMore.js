@@ -9,7 +9,6 @@ const ViewMore=()=>{
     const nav=useNavigate()
     const data=useLoaderData()
     const movies=data.results.slice(0,18)
-    console.log(data)
     // get moview title from the nextPage url 
     // const regex = /list=([^&]+)/;
     // const title = data.next.match(regex)?.[1].replace(/_/g, " ");

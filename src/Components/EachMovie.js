@@ -5,7 +5,6 @@ import About from "./About";
 const EachMovie = () => {
   const { details, video, recomendations, review, creadits } =
     useLoaderData();
-  console.log("details", details);
   // ,whatchProviders,review,creadits
   // geners
   const geners = [];
