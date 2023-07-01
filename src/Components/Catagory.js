@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-const Catagory=({title,data})=>{
+const Catagory=({title,data,catagory})=>{
     const movies = data
     return (
       <div className="pc">
@@ -15,7 +15,7 @@ const Catagory=({title,data})=>{
             </Link>
           ))}
         </div>
-        {/* <Link className="view-more-link" to={`title/viewMore/next`}>View More</Link> */}
+        <Link className="view-more-link" to={`title/viewMore/${catagory}/1`}>View More</Link>
       </div>
     );
 }

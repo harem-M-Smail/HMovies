@@ -15,7 +15,7 @@ function App() {
       <Route path="/" element={<Root/>} loader={rootLoader} errorElement={<ErrorElement/>}>
         <Route index element={<Home/>} loader={homeLoader}/>
         <Route path="title/:id" element={<EachMovie/>} loader={eachMovieLoader} />
-        <Route path="title/viewMore/:genre/:page" element={<ViewMore />} loader={viewMoreLoader}/>
+        <Route path="title/viewMore/:query/:page" element={<ViewMore />} loader={viewMoreLoader}/>
       </Route>
       <Route path="*" element={<NotFound/>}/>
       </>

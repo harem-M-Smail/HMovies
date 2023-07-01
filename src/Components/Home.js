@@ -7,10 +7,10 @@ const Home=()=>{
     return(
         <>
         <div className="home">
-            <Catagory title="Most Popular" data={mostPopMovies} />
-            <Catagory title="Now Playing" data={nowPlaying} />
-            <Catagory title="Top Rated" data={topRatedMovies} />
-            <Catagory title="Upcoming" data={upcomingMovies} />
+            <Catagory title="Most Popular" data={mostPopMovies} catagory={"now_playing"} />
+            <Catagory title="Now Playing" data={nowPlaying} catagory={"popular"} />
+            <Catagory title="Top Rated" data={topRatedMovies} catagory={"top_rated"} />
+            <Catagory title="Upcoming" data={upcomingMovies} catagory={"upcoming"} />
         </div>
         <About/>
         </>   
