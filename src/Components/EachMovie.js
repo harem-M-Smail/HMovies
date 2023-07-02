@@ -196,7 +196,5 @@ export const eachMovieLoader = async ({ params }) => {
   const review = await reviewRes.json();
   const creadits = await creditsRes.json();
 
-  //return them all
-
   return { details, video, recomendations, review, creadits };
 };
