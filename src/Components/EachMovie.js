@@ -114,39 +114,43 @@ const EachMovie = () => {
       )}
       {recomendations.results.length !== 0 && (
         <div className="recomends-container">
-          <h1 >Recomends</h1>
-          <div className="recomend-movies-scroll-container">
-            {recomendations.results.map((movie) => (
-              
-              <Link
-              to={"/title/" + movie.id}
-              key={movie.id}
-            >
-              <img className="each-catagory-movie" src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt="movie_image"/>
-            </Link>
-            ))}
+          <h1>Recomends</h1>
+          <div className="recomends-parent-containe">
+            <div className="recomend-movies-scroll-container">
+              {recomendations.results.map((movie) => (
+                <Link to={"/title/" + movie.id} key={movie.id}>
+                  <img
+                    className="each-catagory-movie"
+                    src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+                    alt="movie_image"
+                  />
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       )}
-      { reviews.length!==0 &&
-                  <div className="reviews-container">
-                  <h1>Reviews</h1>
-                  <div className="reviews-scroll-container">
-                  {reviews.map((review) => (
-                    <div className="each-review" key={review.id}>
-                      <div className="each-review-header">
-                        <img
-                          src={`https://image.tmdb.org/t/p/original${review.author_details.avatar_path}`}
-                          alt="profile_img"
-                        />
-                        <h3>{review.author_details.name}</h3>
-                      </div>
-                      <p>{review.content}</p>
-                    </div>
-                  ))}
-                </div>
+      {reviews.length !== 0 && (
+        <div className="reviews-container">
+        <h1>Reviews</h1>
+        <div className="reviews-parent-container">
+            <div className="reviews-scroll-container">
+              {reviews.map((review) => (
+                <div className="each-review" key={review.id}>
+                  <div className="each-review-header">
+                    <img
+                      src={`https://image.tmdb.org/t/p/original${review.author_details.avatar_path}`}
+                      alt="profile_img"
+                    />
+                    <h3>{review.author_details.name}</h3>
                   </div>
-      }
+                  <p>{review.content}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
       <About />
     </div>
   );

@@ -30,10 +30,11 @@ export const homeLoader=async ()=>{
   };
   // tmdb
     // endpoints
+    
   const mostPopMoviesUrl='https://api.themoviedb.org/3/movie/popular?language=en-US&page=1'
   const nowPlayingUrl='https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=2'
-  const topRatedUrl='https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=3'
-  const upcomingUrl = 'https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=4'
+  const topRatedUrl='https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1'
+  const upcomingUrl = 'https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1'
 
     
     // fetch

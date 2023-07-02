@@ -370,9 +370,13 @@ body{
 .recomend-movies{
   padding: 10px;
 }
+.recomends-parent-container,.reviews-parent-container{
+  display: flex;
+  justify-content: center;
+}
 .recomend-movies-scroll-container,.reviews-scroll-container{
   display: flex;
-  overflow-x: scroll;
+  overflow-x: auto;
   gap: 30px;
   color: white;
   padding: 20px;
@@ -392,7 +396,7 @@ body{
   padding: 8px;
   line-height: 26px;
   background-color: #001C30;
-  overflow-y: scroll;
+  overflow-y: auto;
   border-radius: 8px;
   color: #DAFFFB;
   font-size: 20px;
