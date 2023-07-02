@@ -1,4 +1,4 @@
-import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
+import { Route, RouterProvider, ScrollRestoration, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
 import './App.css';
 import Root, { rootLoader } from './Components/Root';
 import NotFound from './Components/NotFound';
@@ -12,12 +12,12 @@ function App() {
   const router=createBrowserRouter(
     createRoutesFromElements(
       <>
-      <Route path="/" element={<Root/>} loader={rootLoader} errorElement={<ErrorElement/>}>
-        <Route index element={<Home/>} loader={homeLoader}/>
-        <Route path="title/:id" element={<EachMovie/>} loader={eachMovieLoader} />
-        <Route path="title/viewMore/:query/:page" element={<ViewMore />} loader={viewMoreLoader}/>
+      <Route  path="/" element={<Root/>} loader={rootLoader} errorElement={<ErrorElement/>} scrollRestoration="enabled">
+        <Route index element={<Home/>} loader={homeLoader} scrollRestoration="enabled"/>
+        <Route path="title/:id" element={<EachMovie/>} loader={eachMovieLoader}  scrollRestoration="enabled"/>
+        <Route path="title/viewMore/:query/:page" element={<ViewMore />} loader={viewMoreLoader} scrollRestoration="enabled"/>
       </Route>
-      <Route path="*" element={<NotFound/>}/>
+      <Route path="*" element={<NotFound/>} scrollRestoration="enabled"/>
       </>
   ))
   return (

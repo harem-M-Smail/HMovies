@@ -8,6 +8,7 @@ const Catagory=({title,data,catagory})=>{
         <div className="catagory">
           {movies.results.slice(0,12).map((movie) => (
             <Link
+              preventScrollReset={true}
               to={"/title/" + movie.id}
               key={movie.id}
             >

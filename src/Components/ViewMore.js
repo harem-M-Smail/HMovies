@@ -9,12 +9,9 @@ const ViewMore=()=>{
     const nav=useNavigate()
     const data=useLoaderData()
     const movies=data.results.slice(0,18)
-    // get moview title from the nextPage url 
-    // const regex = /list=([^&]+)/;
-    // const title = data.next.match(regex)?.[1].replace(/_/g, " ");
+    
     return(
    <>
-            {/* <h1>{title}</h1> */}
             <div className="view-more">
                 <div className="pm">
                     <div className="catagory">

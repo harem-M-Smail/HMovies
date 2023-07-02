@@ -1,11 +1,12 @@
 /* eslint-disable */
 import { Link, useLoaderData } from "react-router-dom";
 import About from "./About";
+import { useRef } from "react";
 
 const EachMovie = () => {
   const { details, video, recomendations, review, creadits } =
     useLoaderData();
-  // ,whatchProviders,review,creadits
+    const divRef = useRef();
   // geners
   const geners = [];
   details.genres.map((gener) => {
@@ -116,9 +117,11 @@ const EachMovie = () => {
         <div className="recomends-container">
           <h1>Recomends</h1>
           <div className="recomends-parent-container">
-            <div className="recomend-movies-scroll-container">
+            <div className="recomend-movies-scroll-container" ref={divRef}>
               {recomendations.results.map((movie) => (
-                <Link to={"/title/" + movie.id} key={movie.id}>
+                <Link to={"/title/" + movie.id} key={movie.id} 
+                // onClick={() => divRef.current.scrollTo({ top: 0, left: 0,behavior:"smooth" })}
+                >
                   <img
                     className="each-catagory-movie"
                     src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
@@ -134,7 +137,7 @@ const EachMovie = () => {
         <div className="reviews-container">
         <h1>Reviews</h1>
         <div className="reviews-parent-container">
-            <div className="reviews-scroll-container">
+            <div className="reviews-scroll-container" ref={divRef}>
               {reviews.map((review) => (
                 <div className="each-review" key={review.id}>
                   <div className="each-review-header">
