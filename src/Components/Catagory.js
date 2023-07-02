@@ -15,7 +15,7 @@ const Catagory=({title,data,catagory})=>{
             </Link>
           ))}
         </div>
-        <Link className="view-more-link" to={`title/viewMore/${catagory}/1`}>View More</Link>
+        {/* <Link className="view-more-link" to={`title/viewMore/${catagory}/1`}>View More</Link> */}
       </div>
     );
 }

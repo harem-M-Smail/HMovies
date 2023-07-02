@@ -30,7 +30,6 @@ const ViewMore=()=>{
                 </div>
                 <div className="pagination-div">
                      <Pagination className="pagination"  count={10}  onChange={(e,page)=>nav(`/title/viewMore/${query}/${page}`)} />
-                     {/* {/* ${data.next.slice(8).replace(/page=\d+/, `page=${page+1}`)} */}
                 </div>
             </div>
         </>
@@ -47,15 +46,7 @@ export const viewMoreLoader= async ({params})=>{
           Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2MGJhZmUxZmJlNDdmZjQyN2Q3YjYxZDZjMjM4ZjBmNyIsInN1YiI6IjY0OGZlMWQ0NDU3NjVkMDEwMDE2ZThhYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.TAQ6aunEoLDp70i-dwk1IULk4CGYomKqxFmnSJZcKh8'
         }
       };
-    
-    const catagoryUrl=`https://api.themoviedb.org/3/movie/${params.query}?language=en-US&page=1`
     const genreUrl=`https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}&sort_by=popularity.desc&with_genres=${query}`
-    let selectedUrl=''
-    if(parseInt(params.query) === "NaN" ){
-        selectedUrl=genreUrl
-    }else{
-        selectedUrl=catagoryUrl
-    }
     const res= await fetch(genreUrl,options)
     if(!res.ok){
         throw new Error("couldnot fetch view more movies")
