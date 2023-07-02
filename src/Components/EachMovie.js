@@ -115,7 +115,7 @@ const EachMovie = () => {
       {recomendations.results.length !== 0 && (
         <div className="recomends-container">
           <h1>Recomends</h1>
-          <div className="recomends-parent-containe">
+          <div className="recomends-parent-container">
             <div className="recomend-movies-scroll-container">
               {recomendations.results.map((movie) => (
                 <Link to={"/title/" + movie.id} key={movie.id}>
