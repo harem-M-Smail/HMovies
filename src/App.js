@@ -1,4 +1,4 @@
-import { Route, RouterProvider, ScrollRestoration, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
+import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
 import './App.css';
 import Root, { rootLoader } from './Components/Root';
 import NotFound from './Components/NotFound';
